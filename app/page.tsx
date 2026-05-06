@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { ServicesOverview } from "@/components/ServicesOverview";
 import { PortfolioGrid } from "@/components/PortfolioGrid";
+import { FeaturedVideo } from "@/components/FeaturedVideo";
 import { Testimonials } from "@/components/Testimonials";
 import { CTA } from "@/components/CTA";
 
@@ -19,7 +20,16 @@ export default function HomePage() {
               </h2>
             </div>
           </div>
-          <PortfolioGrid limit={6} showFilter={false} />
+
+          <FeaturedVideo
+            src="/portfolio/featured.mp4"
+            title="Aurora — launch campaign"
+            caption="A 12-second hero spot generated end-to-end with our internal prompt stack."
+          />
+
+          <div className="mt-10">
+            <PortfolioGrid limit={6} showFilter={false} />
+          </div>
         </div>
       </section>
       <Testimonials />

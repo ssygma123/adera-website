@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PortfolioGrid } from "@/components/PortfolioGrid";
+import { FeaturedVideo } from "@/components/FeaturedVideo";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
@@ -24,8 +25,21 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      <section className="pt-12 sm:pt-16">
+        <div className="container-x">
+          <FeaturedVideo
+            src="/portfolio/featured.mp4"
+            title="Aurora — launch campaign"
+            caption="A 12-second hero spot generated end-to-end with our internal prompt stack."
+          />
+        </div>
+      </section>
+
       <section className="section">
         <div className="container-x">
+          <h2 className="mb-8 text-2xl font-semibold tracking-tight">
+            More work
+          </h2>
           <PortfolioGrid />
         </div>
       </section>
