@@ -3,6 +3,7 @@ import { ServicesOverview } from "@/components/ServicesOverview";
 import { PortfolioGrid } from "@/components/PortfolioGrid";
 import { FeaturedVideo } from "@/components/FeaturedVideo";
 import { Testimonials } from "@/components/Testimonials";
+import { TikTokBanner } from "@/components/TikTokBanner";
 import { CTA } from "@/components/CTA";
 
 export default function HomePage() {
@@ -33,6 +34,7 @@ export default function HomePage() {
         </div>
       </section>
       <Testimonials />
+      <TikTokBanner />
       <CTA />
     </>
   );
