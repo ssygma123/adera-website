@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { getProductById } from "@/lib/products";
+import { signDownloadToken } from "@/lib/download-token";
 
 export const runtime = "nodejs";
+
+const DIGITAL_DOWNLOADS: Record<string, string> = {
+  "prompt-cinematic-portraits": "/download/cinematic-portrait-pack"
+};
 
 export async function POST(req: Request) {
   if (!process.env.STRIPE_SECRET_KEY) {
@@ -34,6 +39,13 @@ export async function POST(req: Request) {
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ?? new URL(req.url).origin;
 
+  const downloadPath = DIGITAL_DOWNLOADS[product.id];
+  const successUrl = downloadPath
+    ? `${siteUrl}${downloadPath}?token=${signDownloadToken(
+        product.id
+      )}&session_id={CHECKOUT_SESSION_ID}`
+    : `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`;
+
   try {
     const session = await stripe.checkout.sessions.create({
       mode: product.kind === "ad-package" ? "payment" : "payment",
@@ -52,7 +64,7 @@ export async function POST(req: Request) {
           }
         }
       ],
-      success_url: `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: successUrl,
       cancel_url: `${siteUrl}/cancel`,
       metadata: { productId: product.id, kind: product.kind },
       allow_promotion_codes: true
