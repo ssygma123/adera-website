@@ -20,13 +20,14 @@ export const adPackages: Product[] = [
     kind: "ad-package",
     name: "Starter",
     tagline: "Test the waters",
-    description: "Three AI-crafted ads to validate your messaging.",
+    description: "Three AI-crafted ads to validate your messaging — delivered fully async.",
     priceEUR: 299,
     features: [
       "3 AI Ads (static + video)",
       "2 revisions",
       "Delivery in 3 days",
-      "Source files included"
+      "Source files included",
+      "100% async – no calls required"
     ]
   },
   {
@@ -34,15 +35,16 @@ export const adPackages: Product[] = [
     kind: "ad-package",
     name: "Growth",
     tagline: "Scale what works",
-    description: "Production-ready ad set with strategy guidance.",
+    description: "Production-ready ad set with async strategy support over Slack or WhatsApp.",
     priceEUR: 699,
     highlight: true,
     features: [
       "10 AI Ads (static + video)",
       "Unlimited revisions",
-      "30-min strategy call",
+      "Dedicated Slack/WhatsApp communication channel",
       "Delivery in 5 days",
-      "A/B test variants"
+      "A/B test variants",
+      "100% async – no calls required"
     ]
   },
   {
@@ -50,15 +52,16 @@ export const adPackages: Product[] = [
     kind: "ad-package",
     name: "Premium",
     tagline: "Full creative ops",
-    description: "Dedicated manager + monthly retainer option.",
+    description: "Priority async support + monthly retainer option.",
     priceEUR: 1499,
     features: [
       "25 AI Ads",
-      "Dedicated account manager",
+      "Priority async communication",
       "Monthly retainer option",
       "Priority delivery",
       "Brand guideline integration",
-      "Performance reports"
+      "Performance reports",
+      "100% async – no calls required"
     ]
   }
 ];
