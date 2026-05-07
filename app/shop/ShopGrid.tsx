@@ -8,13 +8,10 @@ import { ProductCard } from "@/components/ProductCard";
 export function ShopGrid() {
   const [active, setActive] = useState<ShopCategory | "all">("all");
 
-  const visible = useMemo(
-    () =>
-      active === "all"
-        ? shopPrompts
-        : shopPrompts.filter((p) => p.category === active),
-    [active]
-  );
+  const visible = useMemo(() => {
+    const base = shopPrompts.filter((p) => !p.highlight);
+    return active === "all" ? base : base.filter((p) => p.category === active);
+  }, [active]);
 
   return (
     <div>

@@ -19,7 +19,9 @@ const swatches: Record<string, string> = {
   video:
     "linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f472b6 100%)",
   social:
-    "linear-gradient(135deg, #047857 0%, #10b981 50%, #6ee7b7 100%)"
+    "linear-gradient(135deg, #047857 0%, #10b981 50%, #6ee7b7 100%)",
+  chatgpt:
+    "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #f59e0b 100%)"
 };
 
 export function ProductCard({

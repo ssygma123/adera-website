@@ -1,6 +1,6 @@
 export type ProductKind = "ad-package" | "prompt-package" | "prompt";
 
-export type ShopCategory = "ad-copy" | "image" | "video" | "social";
+export type ShopCategory = "ad-copy" | "image" | "video" | "social" | "chatgpt";
 
 export interface Product {
   id: string;
@@ -113,6 +113,17 @@ export const promptPackages: Product[] = [
 ];
 
 export const shopPrompts: Product[] = [
+  {
+    id: "prompt-cinematic-portraits",
+    kind: "prompt",
+    category: "chatgpt",
+    name: "Cinematic Portrait Pack",
+    tagline: "Hollywood-grade selfies",
+    description:
+      "15 cinematic ChatGPT prompts that transform any selfie into a Hollywood-quality photo. Rainy streets, cyberpunk cities, desert highways and more.",
+    priceEUR: 9.99,
+    highlight: true
+  },
   {
     id: "prompt-hook-headlines",
     kind: "prompt",
@@ -235,6 +246,7 @@ export function getProductById(id: string): Product | undefined {
 
 export const shopCategories: { id: ShopCategory | "all"; label: string }[] = [
   { id: "all", label: "All" },
+  { id: "chatgpt", label: "ChatGPT Prompts" },
   { id: "ad-copy", label: "Ad Copy" },
   { id: "image", label: "Image Prompts" },
   { id: "video", label: "Video Prompts" },
